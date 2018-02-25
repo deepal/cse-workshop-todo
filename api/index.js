@@ -31,7 +31,7 @@ app.put('/update', function (req, res) {
 });
 
 app.delete('/delete', function (req, res) {
-    const deletingTodoId = req.query.id;
+    const deletingTodoId = parseInt(req.query.id);
     database.deleteTodo(deletingTodoId);
     res.status(200).send({
         message: `todo with id ${deletingTodoId} deleted`
